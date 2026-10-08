@@ -1,4 +1,4 @@
- # Liverpool: Raspberry Pi 5 Gemini Live Robotics Agent
+ # Gemini Robot: Raspberry Pi 5 Gemini Live Robotics Agent
 
 An interactive, physically-embodied robot powered by a **Raspberry Pi 5**, **Google's Gemini Multimodal Live API**, and **4x 28BYJ-48 stepper motors with ULN2003 drivers**.
 
@@ -7,7 +7,7 @@ The robot features real-time bidirectional voice conversation with conversationa
 ---
 
 ## 📋 Table of Contents
-- [Liverpool: Raspberry Pi 5 Gemini Live Robotics Agent](#liverpool-raspberry-pi-5-gemini-live-robotics-agent)
+- [Gemini Robot: Raspberry Pi 5 Gemini Live Robotics Agent](#gemini-robot-raspberry-pi-5-gemini-live-robotics-agent)
   - [📋 Table of Contents](#-table-of-contents)
   - [1. Prerequisites \& Bill of Materials](#1-prerequisites--bill-of-materials)
     - [Core Hardware](#core-hardware)
@@ -74,7 +74,7 @@ Follow these instructions if you are starting with a brand-new, unconfigured Ras
    - **Storage**: Select your microSD card.
 4. Click **Next**. When prompted *"Would you like to apply OS customization settings?"*, click **EDIT SETTINGS**:
    - **General Tab**:
-     - **Set hostname**: `robotpi` (or `liverpool`)
+     - **Set hostname**: `robotpi` (or `gemini-pi`)
      - **Set username and password**: Username `pi` (or your preferred username), enter a secure password.
      - **Configure wireless LAN**: Enter your Wi-Fi SSID and Wi-Fi password. Select your Wireless LAN country.
      - **Set locale settings**: Choose your Timezone and Keyboard layout.
@@ -120,20 +120,20 @@ sudo apt install -y git
 ### Option A: Transfer Files from your Computer via SCP
 If the code is currently on your computer:
 ```bash
-# Run this from your computer terminal (where the 'liverpool' folder resides):
-scp -r /path/to/liverpool pi@robotpi.local:~/liverpool
+# Run this from your computer terminal (where the 'gemini-robot-pi5' folder resides):
+scp -r /path/to/gemini-robot-pi5 pi@robotpi.local:~/robot
 ```
 
 ### Option B: Clone via Git
 If hosted in a Git repository:
 ```bash
 cd ~
-git clone <your-repo-url> liverpool
+git clone https://github.com/ricardo-de-andrade/gemini-robot-pi5.git robot
 ```
 
 ### Run the Automated Setup Script on the Pi
 ```bash
-cd ~/liverpool
+cd ~/robot
 chmod +x setup_pi5.sh
 ./setup_pi5.sh
 ```
@@ -168,7 +168,7 @@ The script automatically:
 | **Common GND** | — | **Driver Board GND (-)** | **Pi GND** | **Pin 6, 14, 20, or 39** | Mandatory common logic reference |
 | **Driver Power**| — | **Driver Board VCC (+)**| **External +5V PSU** | *(Do not connect to Pi)* | 5V / 3A dedicated motor rail |
 
-*For complete diagrams, ASCII header pinout, and wiring rules, see [WIRING.md](file:///Users/rdeandrade/Downloads/liverpool_robot_pi5/WIRING.md).*
+*For complete diagrams, ASCII header pinout, and wiring rules, see [WIRING.md](WIRING.md).*
 
 ---
 
@@ -179,7 +179,7 @@ Before starting the live agent, verify your audio devices, motor wiring, and ind
 ### 1. Activate the Virtual Environment
 ```bash
 source ~/robot_venv/bin/activate
-cd ~/liverpool
+cd ~/robot
 ```
 
 ### 2. Verify Stepper Motors & Individual Wiring Pins
@@ -252,7 +252,7 @@ To turn your Raspberry Pi into a dedicated, autonomous desktop companion that st
 
 1. Copy the systemd service file to the system directory:
    ```bash
-   sudo cp ~/liverpool/robot.service /etc/systemd/system/
+   sudo cp ~/robot/robot.service /etc/systemd/system/
    ```
 2. Reload systemd and enable the service:
    ```bash

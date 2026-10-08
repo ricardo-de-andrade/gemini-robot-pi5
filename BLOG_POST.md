@@ -22,10 +22,10 @@ Here is the story of how it was built, the architecture behind it, and the hard-
 The robot’s architecture splits into three main layers:
 
 ```
-                    ┌─────────────────────────────────────────┐
-                    │      Google Gemini 2.0 Live API         │
+                    ┌──────────────────────────────────────────┐
+                    │      Google Gemini 2.0 Live API          │
                     │   (Bidirectional WebSocket Audio/Events) │
-                    └────────────────────▲────────────────────┘
+                    └────────────────────▲─────────────────────┘
                                          │ Full-Duplex PCM
                                          ▼
                     ┌─────────────────────────────────────────┐
@@ -156,8 +156,8 @@ During long periods of silence, the WebSocket connection to Gemini Live was drop
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/ricardo-de-andrade/liverpool-robot-pi5.git
-cd liverpool-robot-pi5
+git clone https://github.com/ricardo-de-andrade/gemini-robot-pi5.git
+cd gemini-robot-pi5
 ```
 
 ### 2. Configure Environment Variables
@@ -199,6 +199,6 @@ With physical embodiment and real-time conversation working, the next milestones
 Embodied AI transforms the experience of interacting with machine intelligence. When an AI greets you with a physical wave and looks directly at you while conversing, it crosses the threshold from a digital tool to a presence.
 
 Check out the full open-source code and wiring diagrams on GitHub:  
-👉 **[GitHub: ricardo-de-andrade/liverpool-robot-pi5](https://github.com/ricardo-de-andrade/liverpool-robot-pi5)**
+👉 **[GitHub: ricardo-de-andrade/gemini-robot-pi5](https://github.com/ricardo-de-andrade/gemini-robot-pi5)**
 
 If you enjoyed this build, leave a star on the repo or drop a comment below!

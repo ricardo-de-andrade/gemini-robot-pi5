@@ -1,5 +1,5 @@
 [Unit]
-Description=Liverpool Raspberry Pi 5 Gemini Live Robotics Agent
+Description=Gemini Raspberry Pi 5 Gemini Live Robotics Agent
 After=network-online.target sound.target
 Wants=network-online.target sound.target
 
