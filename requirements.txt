@@ -1,0 +1,16 @@
+# Google GenAI SDK with Gemini Live API support
+google-genai>=0.8.0
+
+# Raspberry Pi 5 GPIO Control
+# gpiozero uses lgpio on Pi 5 (RP1 chip)
+gpiozero>=2.0
+lgpio; platform_machine != "x86_64" and platform_system == "Linux"
+
+# Audio Streaming I/O
+sounddevice>=0.4.6
+numpy>=1.24.0
+pyaudio>=0.2.14
+audioop-lts>=0.2.0; python_version >= "3.13"
+
+# Utilities
+python-dotenv>=1.0.0
